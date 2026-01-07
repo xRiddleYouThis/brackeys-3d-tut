@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://db10m4vfg4jmh"]
+
+[ext_resource type="PackedScene" uid="uid://dqul2hgbj4tk8" path="res://Models/building/pillar.glb" id="1_iiqsp"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_affyb"]
+height = 4.0
+radius = 0.6
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7id7u"]
+height = 0.4375
+radius = 0.8
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vuetv"]
+height = 0.659375
+radius = 0.8
+
+[node name="pillar" type="StaticBody3D"]
+
+[node name="pillar2" parent="." instance=ExtResource("1_iiqsp")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9978311, 0)
+shape = SubResource("CylinderShape3D_affyb")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28749996, -0.100000024)
+shape = SubResource("CylinderShape3D_7id7u")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.6984375, -0.100000024)
+shape = SubResource("CylinderShape3D_vuetv")

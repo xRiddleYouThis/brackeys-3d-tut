@@ -1,8 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://6kao0uimjbew"]
 
-[ext_resource type="PackedScene" uid="uid://cow6ags6xtiu4" path="res://Scenes/barrel.tscn" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://Addons/proto_controller/proto_controller.tscn" id="1_jjgbg"]
-[ext_resource type="PackedScene" uid="uid://dw3lg284wfpli" path="res://Scenes/chest.tscn" id="2_bo1nx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7u77a"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -17,6 +15,12 @@ sky = SubResource("Sky_jjgbg")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jjgbg"]
+transparency = 1
+albedo_color = Color(0.8156863, 0.43529412, 0.8156863, 0.78039217)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bo1nx"]
+
 [node name="Main" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -27,7 +31,7 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
-use_collision = true
+material_override = SubResource("StandardMaterial3D_jjgbg")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0999975, 5.0499997, -19.300001)
@@ -75,20 +79,12 @@ radius = 4.46
 height = 0.95
 sides = 47
 
-[node name="Floor" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(91.35, 0, 0, 0, 1, 0, 0, 0, 47.25, -0.05, -0.5, 0.87500143)
-size = Vector3(1.1, 1, 2.3)
-
 [node name="ProtoController" parent="." instance=ExtResource("1_jjgbg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.500001, -0.1, 23.2)
 
-[node name="Chest" parent="." instance=ExtResource("2_bo1nx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.2, 0, -16)
-
-[node name="Barrel" parent="." instance=ExtResource("1_8gbba")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -1.9)
-
-[node name="Barrel2" parent="." instance=ExtResource("1_8gbba")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.8, 0, -2.1000001)
+[node name="Floor" type="CSGBox3D" parent="."]
+transform = Transform3D(91.35, 0, 0, 0, 1, 0, 0, 0, 47.25, -0.05, -0.5, 0.87500143)
+material_override = SubResource("StandardMaterial3D_bo1nx")
+size = Vector3(1.1, 1, 2.3)
 
 [editable path="ProtoController"]

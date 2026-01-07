@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://8q6wi5ethe2l"]
+
+[ext_resource type="PackedScene" uid="uid://bnqxq852bkumc" path="res://Models/building/wall_corner.glb" id="1_ebqd3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kiwcf"]
+size = Vector3(2.1496825, 3.3, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i2qgy"]
+size = Vector3(1.9691406, 0.4, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ykywl"]
+size = Vector3(1.9454467, 0.7, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ovmum"]
+size = Vector3(2.2, 3.3, 0.6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ijrlp"]
+size = Vector3(2.0785155, 0.4, 0.90000004)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s877y"]
+size = Vector3(2.0316405, 0.7, 0.90000004)
+
+[node name="wall_corner" type="StaticBody3D"]
+
+[node name="wall_corner2" parent="." instance=ExtResource("1_ebqd3")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8751588, 1.65, 0)
+shape = SubResource("BoxShape3D_kiwcf")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9654297, 0.2, 0)
+shape = SubResource("BoxShape3D_i2qgy")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9772767, 3.65, 0)
+shape = SubResource("BoxShape3D_ykywl")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.050000012, 1.65, 0.90000004)
+shape = SubResource("BoxShape3D_ovmum")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -1.0105709e-08, 0.2, 0.96074224)
+shape = SubResource("BoxShape3D_ijrlp")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="."]
+transform = Transform3D(0, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, 0, 0, 3.65, 0.98417974)
+shape = SubResource("BoxShape3D_s877y")
