@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://oxk7u1set7gq"]
+
+[ext_resource type="PackedScene" uid="uid://dpru1bf1huxea" path="res://Models/props/coin_stack.glb" id="1_nllkv"]
+
+[node name="coin_stack" type="Node3D"]
+
+[node name="coin_stack" parent="." instance=ExtResource("1_nllkv")]

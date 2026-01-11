@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckouctjqetkbn"]
+
+[ext_resource type="PackedScene" uid="uid://dpc0rhj1a3jyk" path="res://Models/props/plate_food.glb" id="1_ent56"]
+
+[node name="plate_food" type="Node3D"]
+
+[node name="plate_food" parent="." instance=ExtResource("1_ent56")]
